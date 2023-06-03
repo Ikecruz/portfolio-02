@@ -8,3 +8,8 @@ export interface IconProps {
 export interface MyCursorProps {
     children?: ReactNode
 }
+
+export interface MobileNavbarProps {
+    opened: boolean
+    onClose(): void 
+}
