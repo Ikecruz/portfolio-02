@@ -15,3 +15,7 @@ html {
 .my-container{
   @apply w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto
 }
+
+.my-button{
+  @apply w-fit py-[10px] px-[60px] bg-white rounded-tr-[40px] text-sm font-extrabold text-black
+}
