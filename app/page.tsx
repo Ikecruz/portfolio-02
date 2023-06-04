@@ -133,9 +133,9 @@ export default function Home() {
                 </div>
             </div>
             <div className="my-container relative my-32 sm:my-40">
-                <p className="text-2xl leading-[1.4] sm:text-5xl font-black sm:mb-8">My Services</p>
+                <p className="text-2xl leading-[1.4] sm:text-5xl font-black sm:mb-8">Services</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div className="p-4 grid grid-cols-1 divide-y divide-zinc-500">
+                    <div className="sm:order-2 p-4 grid grid-cols-1 divide-y divide-zinc-500">
                         {
                             services.map(({ name, description }, index) => (
                                 <div className="flex gap-4 py-5" key={index}>
