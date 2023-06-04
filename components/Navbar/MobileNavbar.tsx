@@ -7,6 +7,7 @@ import { MobileNavbarProps } from "../interfaces"
 import { AnimatePresence, Variants, motion } from "framer-motion"
 import Image from "next/image"
 import blobImage from "@/images/blob-gradient.svg"
+import { useEffect } from "react"
 
 export const MobileNavbar = ({
     opened,
@@ -76,6 +77,14 @@ export const MobileNavbar = ({
         }
     ]
 
+    useEffect(() => {
+        if (document && opened) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "auto"
+        }
+    }, [opened])
+
     return <AnimatePresence>
 
         {
@@ -101,13 +110,13 @@ export const MobileNavbar = ({
                         className="w-[500px] md:w-[700px] opacity-70"
                     />
                 </div>
-                <div className="flex justify-between px-6 sm:px-14 md:px-24 py-7">
+                <div className="flex justify-between my-container py-7">
                     <p>Ikecruz</p>
                     <button onClick={onClose}>
                         <XIcon size={25} />
                     </button>
                 </div>
-                <div className="flex-1 px-6 sm:px-14 md:px-24 py-7">
+                <div className="flex-1 w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto py-7">
                     <motion.ul 
                         className="flex underline underline-offset-[6px] flex-col gap-10 text-[25px]  h-full py-6"
                         variants={listContainer}

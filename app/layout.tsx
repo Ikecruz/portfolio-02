@@ -1,9 +1,10 @@
 
 import { MyCursor } from '@/components/AnimatedCursor/AnimatedCursor'
 import './globals.css'
-import { Mina } from 'next/font/google'
+import { Marcellus, Mina } from 'next/font/google'
 
-const mina = Mina({ weight: "400", subsets: ['latin'] })
+const mina = Mina({ weight: "700", subsets: ['latin'] })
+const marcellus = Marcellus({ weight: "400", subsets: ['latin'] })
 
 export const metadata = {
   title: 'Onyeka Ikedinobi',
@@ -17,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={mina.className}>
+      <body className={marcellus.className}>
         <MyCursor>
           {children}
         </MyCursor>

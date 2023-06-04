@@ -13,3 +13,8 @@ export interface MobileNavbarProps {
     opened: boolean
     onClose(): void 
 }
+
+export interface AnimatedTextProps {
+    text: string,
+    classname?: string
+}

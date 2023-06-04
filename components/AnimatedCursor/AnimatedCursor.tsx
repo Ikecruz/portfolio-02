@@ -16,9 +16,8 @@ export const MyCursor = ({ children }: MyCursorProps) => {
             outerSize={35}
             innerScale={1}
             outerScale={1.7}
-            // outerAlpha={0}
             outerStyle={{
-              mixBlendMode: 'exclusion'
+                mixBlendMode: 'exclusion',
             }}
         />
         {children}

@@ -11,3 +11,7 @@ html {
   color: var(--secondary-color);
   background: var(--primary-color);
 }
+
+.my-container{
+  @apply w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto
+}

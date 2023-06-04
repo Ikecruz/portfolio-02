@@ -11,7 +11,7 @@ export const Navbar = () => {
 
     return <>
     
-        <nav className="px-6 sm:px-14 md:px-24 py-7 relative">
+        <nav className="my-container py-7">
             <div className="flex justify-between">
                 <p>Ikecruz</p>
                 <div>
@@ -36,13 +36,11 @@ export const Navbar = () => {
                     </button>
                 </div>
             </div>
-
-            <MobileNavbar 
-                opened={mobile} 
-                onClose={() => setMobile(!mobile)} 
-            />
-
         </nav>
+        <MobileNavbar 
+            opened={mobile} 
+            onClose={() => setMobile(!mobile)} 
+        />
 
     </>
 
