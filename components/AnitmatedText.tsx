@@ -3,7 +3,7 @@ import { AnimatedTextProps } from "./interfaces";
 
 export const AnimatedText = ({
     text,
-    classname
+    className
 }: AnimatedTextProps) => {
 
     const wordArr = text.split("")
@@ -28,10 +28,11 @@ export const AnimatedText = ({
     }
 
     return <motion.p
-        className={classname}
+        className={className}
         variants={sentence}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
     >
         {
             wordArr.map((char, index) => (
