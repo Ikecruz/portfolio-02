@@ -13,6 +13,50 @@ import servicesImg1 from "@/images/my-service-image-01.svg"
 import servicesImg2 from "@/images/my-service-image-02.svg"
 import gridImg from "@/images/grid-image.svg"
 import aboutmeImg from "@/images/about-me-image.svg"
+import { ProjectCard } from "@/components/ProjectCard";
+import Link from "next/link";
+import { BsArrowRight } from "react-icons/bs"
+import { mainProjects } from "@/data-store/main-projects";
+
+export const comeFromUnder: Variants = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.7,
+            delayChildren: 0.3
+        }
+    }
+}
+
+export const comeFromUnderChildren: Variants = {
+    hidden: {
+        opacity: 0,
+        y: "100vh"
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            ease: "easeInOut",
+            type: "spring",
+            duration: 1
+        }
+    }
+}
+
+export const buttonAnimation: Variants = {
+    active: {
+        borderTopRightRadius: 0,
+        transition: {
+            ease: "easeInOut",
+            type: "spring",
+            duration: 1
+        }
+    }
+}
 
 export default function Home() {
 
@@ -28,6 +72,15 @@ export default function Home() {
                 bounce: 0.3,
                 type: "spring"
             }
+        }
+    }
+
+    const visible: Variants = {
+        hidden: {
+            opacity: 0,
+        },
+        show: {
+            opacity: 1,
         }
     }
 
@@ -54,8 +107,12 @@ export default function Home() {
         }
     ]
 
+    const MotionLink = motion(Link)
+
     return <>
-        <main className="min-h-screen relative overflow-hidden">
+        <main 
+            className="min-h-screen relative overflow-hidden"
+        >
             <Navbar />
             <div className="hidden -z-10 sm:block absolute top-0 right-0">
                 <Image
@@ -66,7 +123,7 @@ export default function Home() {
             </div>
             <div className="my-container sm:my-10 md:mb-14 gap-[4%] flex flex-wrap sm:h-[65vh] md:h-[80vh] min-[1300px]:h-[65vh]">
                 <motion.div
-                    className="relative w-full h-auto sm:w-[43%]"
+                    className="relative w-full h-auto sm:w-[48%]"
                     variants={appear}
                     initial="hidden"
                     animate="show"
@@ -93,56 +150,129 @@ export default function Home() {
                         />
                     </div>
                 </motion.div>
-                <div className="w-full sm:w-[43%] flex flex-col justify-center gap-7">
-                    <div className="flex items-center gap-4">
+                <div className="w-full sm:w-[48%] flex flex-col justify-center gap-7">
+                    <motion.div 
+                        className="flex items-center gap-4"
+                        variants={visible}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                    >
                         <div className="h-10 w-10 bg-white flex justify-center items-center rounded-full">
                             <BsChatSquareText color="black" size="40%" />
                         </div>
                         <p className="font-black">Chat with me</p>
-                    </div>
+                    </motion.div>
                     <AnimatedText
-                        text="Your Design & Development Partner"
-                        classname="text-4xl leading-[1.4] sm:text-5xl min-[980px]:text-6xl lg:text-7xl sm:leading-[1.2] font-black"
+                        text="Fullstack Developer / Software Engineer"
+                        className="text-4xl leading-[1.4] sm:text-5xl min-[980px]:text-6xl lg:text-7xl sm:leading-[1.2] font-black"
                     />
-                    <button className="my-button">
+                    <motion.a 
+                        className="my-button"
+                        variants={{...buttonAnimation, ...visible}}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        whileHover="active"
+                    >
                         Lets talk
-                    </button>
+                    </motion.a>
                 </div>
             </div>
             <div className="my-container my-32 sm:my-40">
-                <p className="text-2xl leading-[1.4] sm:text-5xl font-black sm:mb-8">Onyeka Ikedinobi</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="sm:order-2">
-                        <Image 
+                <AnimatedText
+                    text="Onyeka Ikedinobi"
+                    className="text-2xl leading-[1.4] sm:text-5xl font-black mb-4 sm:mb-8"
+                />
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                    variants={comeFromUnder}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                >
+                    <motion.div
+                        className="sm:order-2"
+                        variants={comeFromUnderChildren}
+                    >
+                        <Image
                             src={aboutmeImg}
                             alt=""
                             className="w-full my-5 sm:my-0 sm:h-[400px] object-contain"
                         />
-                    </div>
-                    <div className="flex flex-col justify-center gap-4">
+                    </motion.div>
+                    <motion.div
+                        className="flex flex-col justify-center gap-4"
+                        variants={comeFromUnderChildren}
+                    >
                         <p>
-                            Hey, my name is  and I am across social medias. I’m a graphic designer, 
-                            UX/UI designer & front-end web developer from France. 
-                            I’m also passionate about pop music and make portraits and universes around what I listen to and 
+                            Hey, my name is  and I am across social medias. I’m a graphic designer,
+                            UX/UI designer & front-end web developer from France.
+                            I’m also passionate about pop music and make portraits and universes around what I listen to and
                             I’m always curious to learn more when it comes to new technologies and creative coding.
                         </p>
-                        <button className="my-button">
+                        <motion.a 
+                            className="my-button"
+                            variants={buttonAnimation}
+                            whileHover="active"
+                        >
                             Resume
-                        </button>
-                    </div>
-                </div>
+                        </motion.a>
+                    </motion.div>
+                </motion.div>
             </div>
-            <div className="my-container relative my-32 sm:my-40">
-                <p className="text-2xl leading-[1.4] sm:text-5xl font-black sm:mb-8">Services</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div className="sm:order-2 p-4 grid grid-cols-1 divide-y divide-zinc-500">
+            <div className="my-container relative my-28 sm:my-40">
+                <AnimatedText
+                    text="What i do"
+                    className="text-2xl leading-[1.4] sm:text-5xl font-black mb-4 sm:mb-8"
+                />
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-5"
+                    variants={comeFromUnder}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                >
+                    <motion.div
+                        className="p-4 hidden justify-center items-center sm:flex"
+                        variants={comeFromUnderChildren}
+                    >
+                        <div className="w-[80%] relative">
+                            <Image
+                                src={servicesImg1}
+                                alt=""
+                                className="w-full h-auto "
+                            />
+                            <motion.div
+                                className="w-full h-auto absolute top-0 left-0"
+                                initial={{
+                                    x: "-7%",
+                                    y: "-7%"
+                                }}
+                                whileHover={{
+                                    x: 0,
+                                    y: 0,
+                                }}
+                            >
+                                <Image
+                                    src={servicesImg2}
+                                    alt=""
+                                    className="w-full"
+                                />
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        className="grid grid-cols-1 divide-y divide-zinc-500"
+                        variants={comeFromUnderChildren}
+                    >
                         {
                             services.map(({ name, description }, index) => (
-                                <div className="flex gap-4 py-5" key={index}>
-                                    <div className="w-1/5 sm:w-1/4">
+                                <div className="flex gap-8 py-5" key={index}>
+                                    <div className="sm:w-1/4">
                                         <p className=" font-black">0{index}</p>
                                     </div>
-                                    <div className="w-4/5 sm:w-3/4">
+                                    <div className="sm:w-3/4">
                                         <p className="text-xl font-bold">{name}</p>
                                         <p className="text-slate-200">
                                             {description}
@@ -151,44 +281,57 @@ export default function Home() {
                                 </div>
                             ))
                         }
-                    </div>
-                    <div className="p-4 hidden justify-center items-center sm:flex">
-                        <div className="w-[80%] relative">
-                            <Image 
-                                src={servicesImg1}
-                                alt=""
-                                className="w-full h-auto "
-                            />
-                            <motion.div 
-                                className="w-full h-auto absolute top-0 left-0"
-                                initial={{
-                                    x: "-10%",
-                                    y: "-10%"
-                                }}
-                                whileHover={{
-                                    x: 0,
-                                    y: 0,
-                                }}
-                            >
-                                <Image 
-                                    src={servicesImg2}
-                                    alt=""
-                                    className="w-full"
-                                />
-                            </motion.div>
-                        </div>
-                    </div>
-                </div>
-                <Image 
+                    </motion.div>
+                </motion.div>
+                <Image
                     src={gridImg}
                     alt=""
                     className="object-contain absolute top-[-20%] left-[-100px] -z-10 w-[250px]"
                 />
-                <Image 
+                <Image
                     src={gridImg}
                     alt=""
                     className="object-contain absolute bottom-[-20%] right-[-100px] -z-10 w-[250px] rotate-90"
                 />
+            </div>
+            <div className="my-container my-32 sm:my-40">
+                <AnimatedText
+                    text="Crafted with love"
+                    className="text-2xl leading-[1.4] sm:text-5xl font-black mb-6 sm:mb-8"
+                />
+                <div className="flex relative flex-col gap-14">
+                    {
+                        mainProjects.map((
+                            props,
+                            index
+                        ) => (
+                            <ProjectCard 
+                                index={index}
+                                key={index}
+                                {...props}
+                            />
+                        ))
+                    }
+                    <Image
+                        src={gridImg}
+                        alt=""
+                        className="object-contain absolute top-[150px] left-[-100px] -z-10 w-[250px] rotate-45"
+                    />
+                    {/* <div className="flex flex-col gap-2 mt-5">
+                        <p className="text-sm">There&apos;s More</p>
+                        <MotionLink 
+                            href=""
+                            className="flex gap-8 text-2xl sm:text-4xl font-black items-center"
+                            initial={false}
+                            whileHover={{
+                                x: 20
+                            }}
+                        >
+                            <p>view more projects</p>
+                            <BsArrowRight />
+                        </MotionLink>
+                    </div> */}
+                </div>
             </div>
         </main>
     </>
