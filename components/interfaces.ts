@@ -16,5 +16,5 @@ export interface MobileNavbarProps {
 
 export interface AnimatedTextProps {
     text: string,
-    classname?: string
+    className?: string
 }
