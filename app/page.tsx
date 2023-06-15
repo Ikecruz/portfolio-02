@@ -17,6 +17,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs"
 import { mainProjects } from "@/data-store/main-projects";
+import { Footer } from "@/components/Footer/Footer";
 
 export const comeFromUnder: Variants = {
     hidden: {
@@ -333,6 +334,7 @@ export default function Home() {
                     </div> */}
                 </div>
             </div>
+            <Footer />
         </main>
     </>
 

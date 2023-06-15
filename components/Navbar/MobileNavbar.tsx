@@ -8,7 +8,7 @@ import { AnimatePresence, Variants, motion } from "framer-motion"
 import Image from "next/image"
 import blobImage from "@/images/blob-gradient.svg"
 import { useEffect } from "react"
-import { linkItems } from "./Navbar"
+import { fira, linkItems } from "./Navbar"
 
 export const listContainer: Variants = {
     hidden: {
@@ -26,6 +26,24 @@ export const listContainer: Variants = {
         }
     }
 }
+
+export const socialItems = [
+    {
+        name: "Github",
+        Icon: () => <FiGithub />,
+        link: "d"
+    },
+    {
+        name: "Twitter",
+        Icon: () => <FiTwitter />,
+        link: "f"
+    },
+    {
+        name: "Linkedin",
+        Icon: () => <FiLinkedin />,
+        link: "r"
+    }
+]
 
 export const MobileNavbar = ({
     opened,
@@ -47,24 +65,6 @@ export const MobileNavbar = ({
         hidden: { opacity: 0 },
         show: { opacity: 1 }
     }
-
-    const socialItems = [
-        {
-            name: "Github",
-            Icon: () => <FiGithub />,
-            link: "d"
-        },
-        {
-            name: "Twitter",
-            Icon: () => <FiTwitter />,
-            link: "f"
-        },
-        {
-            name: "Linkedin",
-            Icon: () => <FiLinkedin />,
-            link: "r"
-        }
-    ]
 
     useEffect(() => {
         if (document && opened) {
@@ -96,7 +96,11 @@ export const MobileNavbar = ({
                 />
             </div>
             <div className="flex justify-between my-container py-7">
-                <p>Ikecruz</p>
+                <div>
+                    <div className="w-[46px] ps-3 bg-white">
+                        <p className="text-2xl font-black text-white filter mix-blend-difference" style={fira.style} >ikecruz.</p>
+                    </div>
+                </div>
                 <button onClick={onClose}>
                     <XIcon size={25} />
                 </button>

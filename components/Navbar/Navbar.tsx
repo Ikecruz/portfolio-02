@@ -5,6 +5,7 @@ import { MobileNavbar, listContainer } from "./MobileNavbar"
 import { Hamburger } from "../Icons/Hamburger"
 import { useState } from "react"
 import { Variants, motion } from "framer-motion"
+import { Fira_Sans, IBM_Plex_Sans, Inter, Kanit, Lato, Mukta } from "next/font/google"
 
 export const linkItems = [
     {
@@ -25,6 +26,8 @@ export const linkItems = [
     }
 ]
 
+export const fira = Fira_Sans({ weight: "800", subsets: ['latin'] })
+
 export const Navbar = () => {
 
     const [mobile, setMobile] = useState(false)
@@ -42,7 +45,11 @@ export const Navbar = () => {
     
         <nav className="my-container py-7">
             <div className="flex justify-between">
-                <p>Ikecruz</p>
+                <div>
+                    <div className="w-[46px] ps-3 bg-white">
+                        <p className="text-2xl font-black text-white filter mix-blend-difference" style={fira.style} >ikecruz.</p>
+                    </div>
+                </div>
                 <div>
                     <motion.ul 
                         className="hidden sm:flex gap-5 list-none"
