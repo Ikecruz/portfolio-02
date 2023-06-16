@@ -6,7 +6,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import { BiLinkExternal } from "react-icons/bi"
 import { SiNextdotjs, SiTypescript } from "react-icons/si"
 import { TbBrandMantine } from "react-icons/tb"
-import { buttonAnimation, comeFromUnder, comeFromUnderChildren } from "@/app/page";
+import { buttonAnimation, comeFromUnder, comeFromUnderChildren } from "@/data-store/animations";
 import { mainProjects } from "@/data-store/main-projects";
 
 export const ProjectCard = ({ 
