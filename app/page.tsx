@@ -137,6 +137,7 @@ export default function Home() {
                         whileInView="show"
                         viewport={{ once: true }}
                         whileHover="active"
+                        href="mailto:ikedinobicruz7@gmail.com"
                     >
                         Lets talk
                     </motion.a>
@@ -179,6 +180,8 @@ export default function Home() {
                                 className="my-button"
                                 variants={buttonAnimation}
                                 whileHover="active"
+                                href="/ikecruz.pdf"
+                                target="_blank"
                             >
                                 Resume
                             </motion.a>

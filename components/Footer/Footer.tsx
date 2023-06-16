@@ -28,7 +28,7 @@ export const Footer = () => {
                 </div>
                 <div className="pt-7 md:pt-[100px]">
                     <div className="flex flex-col md:items-end">
-                        <a className=" text-2xl md:text-3xl hover:underline portrait:underline underline-offset-[6px]">hello@ikecruz.dev</a>
+                        <a href="mailto:ikedinobicruz7@gmail.com" className=" text-2xl md:text-3xl hover:underline portrait:underline underline-offset-[6px]">ikedinobicruz7@gmail.com</a>
                     </div>
                     <div>
                         <ul className="my-10 flex flex-col gap-5 font-[600] text-xl">
