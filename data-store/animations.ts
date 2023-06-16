@@ -22,7 +22,6 @@ export const comeFromUnderChildren: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            ease: "easeInOut",
             type: "spring",
             duration: 1
         }
@@ -33,7 +32,6 @@ export const buttonAnimation: Variants = {
     active: {
         borderTopRightRadius: 0,
         transition: {
-            ease: "easeInOut",
             type: "spring",
             duration: 1
         }
