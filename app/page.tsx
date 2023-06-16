@@ -19,6 +19,7 @@ import { BsArrowRight } from "react-icons/bs"
 import { mainProjects } from "@/data-store/main-projects";
 import { Footer } from "@/components/Footer/Footer";
 import { buttonAnimation, comeFromUnder, comeFromUnderChildren } from "@/data-store/animations";
+import { Element } from "react-scroll"
 
 export default function Home() {
 
@@ -72,7 +73,7 @@ export default function Home() {
     const MotionLink = motion(Link)
 
     return <>
-        <main 
+        <main
             className="min-h-screen relative overflow-hidden"
         >
             <Navbar />
@@ -113,7 +114,7 @@ export default function Home() {
                     </div>
                 </motion.div>
                 <div className="w-full sm:w-[48%] flex flex-col justify-center gap-7">
-                    <motion.div 
+                    <motion.div
                         className="flex items-center gap-4"
                         variants={visible}
                         initial="hidden"
@@ -129,9 +130,9 @@ export default function Home() {
                         text="Fullstack Developer / Software Engineer"
                         className="text-4xl leading-[1.4] sm:text-5xl min-[980px]:text-6xl lg:text-7xl sm:leading-[1.2] font-black"
                     />
-                    <motion.a 
+                    <motion.a
                         className="my-button"
-                        variants={{...buttonAnimation, ...visible}}
+                        variants={{ ...buttonAnimation, ...visible }}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
@@ -141,145 +142,152 @@ export default function Home() {
                     </motion.a>
                 </div>
             </div>
-            <div className="my-container my-32 sm:my-40">
-                <AnimatedText
-                    text="Onyeka Ikedinobi"
-                    className="text-2xl leading-[1.4] sm:text-5xl font-black mb-4 sm:mb-8"
-                />
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
-                    variants={comeFromUnder}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                >
+            <Element name="about">
+                <div className="my-container my-32 sm:my-40">
+                    <AnimatedText
+                        text="Onyeka Ikedinobi"
+                        className="text-2xl leading-[1.4] sm:text-5xl font-black mb-4 sm:mb-8"
+                    />
                     <motion.div
-                        className="sm:order-2"
-                        variants={comeFromUnderChildren}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                        variants={comeFromUnder}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
                     >
-                        <Image
-                            src={aboutmeImg}
-                            alt=""
-                            className="w-full my-5 sm:my-0 sm:h-[400px] object-contain"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="flex flex-col justify-center gap-4"
-                        variants={comeFromUnderChildren}
-                    >
-                        <p>
-                            Hey, my name is  and I am across social medias. I’m a graphic designer,
-                            UX/UI designer & front-end web developer from France.
-                            I’m also passionate about pop music and make portraits and universes around what I listen to and
-                            I’m always curious to learn more when it comes to new technologies and creative coding.
-                        </p>
-                        <motion.a 
-                            className="my-button"
-                            variants={buttonAnimation}
-                            whileHover="active"
+                        <motion.div
+                            className="sm:order-2"
+                            variants={comeFromUnderChildren}
                         >
-                            Resume
-                        </motion.a>
-                    </motion.div>
-                </motion.div>
-            </div>
-            <div className="my-container relative my-28 sm:my-40">
-                <AnimatedText
-                    text="What i do"
-                    className="text-2xl leading-[1.4] sm:text-5xl font-black mb-4 sm:mb-8"
-                />
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 gap-5"
-                    variants={comeFromUnder}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                >
-                    <motion.div
-                        className="p-4 hidden justify-center items-center sm:flex"
-                        variants={comeFromUnderChildren}
-                    >
-                        <div className="w-[80%] relative">
                             <Image
-                                src={servicesImg1}
+                                src={aboutmeImg}
                                 alt=""
-                                className="w-full h-auto "
+                                className="w-full my-5 sm:my-0 sm:h-[400px] object-contain"
                             />
-                            <motion.div
-                                className="w-full h-auto absolute top-0 left-0"
-                                initial={{
-                                    x: "-7%",
-                                    y: "-7%"
-                                }}
-                                whileHover={{
-                                    x: 0,
-                                    y: 0,
-                                }}
+                        </motion.div>
+                        <motion.div
+                            className="flex flex-col justify-center gap-4"
+                            variants={comeFromUnderChildren}
+                        >
+                            <p>
+                                Hey, my name is  and I am across social medias. I’m a graphic designer,
+                                UX/UI designer & front-end web developer from France.
+                                I’m also passionate about pop music and make portraits and universes around what I listen to and
+                                I’m always curious to learn more when it comes to new technologies and creative coding.
+                            </p>
+                            <motion.a
+                                className="my-button"
+                                variants={buttonAnimation}
+                                whileHover="active"
                             >
-                                <Image
-                                    src={servicesImg2}
-                                    alt=""
-                                    className="w-full"
-                                />
-                            </motion.div>
-                        </div>
+                                Resume
+                            </motion.a>
+                        </motion.div>
                     </motion.div>
+                </div>
+            </Element>
+
+            <Element name="services">
+                <div className="my-container relative my-28 sm:my-40">
+                    <AnimatedText
+                        text="What i do"
+                        className="text-2xl leading-[1.4] sm:text-5xl font-black mb-4 sm:mb-8"
+                    />
                     <motion.div
-                        className="grid grid-cols-1 divide-y divide-zinc-500"
-                        variants={comeFromUnderChildren}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-5"
+                        variants={comeFromUnder}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
                     >
-                        {
-                            services.map(({ name, description }, index) => (
-                                <div className="flex gap-8 py-5" key={index}>
-                                    <div className="sm:w-1/4">
-                                        <p className=" font-black">0{index}</p>
+                        <motion.div
+                            className="p-4 hidden justify-center items-center sm:flex"
+                            variants={comeFromUnderChildren}
+                        >
+                            <div className="w-[80%] relative">
+                                <Image
+                                    src={servicesImg1}
+                                    alt=""
+                                    className="w-full h-auto "
+                                />
+                                <motion.div
+                                    className="w-full h-auto absolute top-0 left-0"
+                                    initial={{
+                                        x: "-7%",
+                                        y: "-7%"
+                                    }}
+                                    whileHover={{
+                                        x: 0,
+                                        y: 0,
+                                    }}
+                                >
+                                    <Image
+                                        src={servicesImg2}
+                                        alt=""
+                                        className="w-full"
+                                    />
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            className="grid grid-cols-1 divide-y divide-zinc-500"
+                            variants={comeFromUnderChildren}
+                        >
+                            {
+                                services.map(({ name, description }, index) => (
+                                    <div className="flex gap-8 py-5" key={index}>
+                                        <div className="sm:w-1/4">
+                                            <p className=" font-black">0{index}</p>
+                                        </div>
+                                        <div className="sm:w-3/4">
+                                            <p className="text-xl font-bold">{name}</p>
+                                            <p className="text-slate-200">
+                                                {description}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="sm:w-3/4">
-                                        <p className="text-xl font-bold">{name}</p>
-                                        <p className="text-slate-200">
-                                            {description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))
-                        }
+                                ))
+                            }
+                        </motion.div>
                     </motion.div>
-                </motion.div>
-                <Image
-                    src={gridImg}
-                    alt=""
-                    className="object-contain absolute top-[-20%] left-[-100px] -z-10 w-[250px]"
-                />
-                <Image
-                    src={gridImg}
-                    alt=""
-                    className="object-contain absolute bottom-[-20%] right-[-100px] -z-10 w-[250px] rotate-90"
-                />
-            </div>
-            <div className="my-container my-32 sm:my-40">
-                <AnimatedText
-                    text="Crafted with love"
-                    className="text-2xl leading-[1.4] sm:text-5xl font-black mb-6 sm:mb-8"
-                />
-                <div className="flex relative flex-col gap-14">
-                    {
-                        mainProjects.map((
-                            props,
-                            index
-                        ) => (
-                            <ProjectCard 
-                                index={index}
-                                key={index}
-                                {...props}
-                            />
-                        ))
-                    }
                     <Image
                         src={gridImg}
                         alt=""
-                        className="object-contain absolute top-[150px] left-[-100px] -z-10 w-[250px] rotate-45"
+                        className="object-contain absolute top-[-20%] left-[-100px] -z-10 w-[250px]"
                     />
-                    {/* <div className="flex flex-col gap-2 mt-5">
+                    <Image
+                        src={gridImg}
+                        alt=""
+                        className="object-contain absolute bottom-[-20%] right-[-100px] -z-10 w-[250px] rotate-90"
+                    />
+                </div>
+            </Element>
+
+            <Element name="projects">
+                <div className="my-container my-32 sm:my-40">
+                    <AnimatedText
+                        text="Crafted with love"
+                        className="text-2xl leading-[1.4] sm:text-5xl font-black mb-6 sm:mb-8"
+                    />
+                    <div className="flex relative flex-col gap-14">
+                        {
+                            mainProjects.map((
+                                props,
+                                index
+                            ) => (
+                                <ProjectCard
+                                    index={index}
+                                    key={index}
+                                    {...props}
+                                />
+                            ))
+                        }
+                        <Image
+                            src={gridImg}
+                            alt=""
+                            className="object-contain absolute top-[150px] left-[-100px] -z-10 w-[250px] rotate-45"
+                        />
+                        {/* <div className="flex flex-col gap-2 mt-5">
                         <p className="text-sm">There&apos;s More</p>
                         <MotionLink 
                             href=""
@@ -293,9 +301,13 @@ export default function Home() {
                             <BsArrowRight />
                         </MotionLink>
                     </div> */}
+                    </div>
                 </div>
-            </div>
-            <Footer />
+            </Element>
+
+            <Element name="contact">
+                <Footer />
+            </Element>
         </main>
     </>
 

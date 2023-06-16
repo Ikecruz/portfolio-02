@@ -28,6 +28,7 @@ body{
 html {
   color: var(--secondary-color);
   background: var(--primary-color);
+  scroll-behavior: smooth;
 }
 
 .my-container{

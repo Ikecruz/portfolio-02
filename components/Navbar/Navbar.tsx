@@ -5,25 +5,26 @@ import { MobileNavbar, listContainer } from "./MobileNavbar"
 import { Hamburger } from "../Icons/Hamburger"
 import { useState } from "react"
 import { Variants, motion } from "framer-motion"
-import { Fira_Sans, IBM_Plex_Sans, Inter, Kanit, Lato, Mukta } from "next/font/google"
+import { Fira_Sans } from "next/font/google"
+import { Link as ScrollLink } from "react-scroll"
 
 export const linkItems = [
     {
-        name: "Home",
-        path: "/"
+        name: "About",
+        path: "about"
     },
     {
-        name: "About",
-        path: "/about"
+        name: "Services",
+        path: "services"
     },
     {
         name: "Projects",
-        path: "/projects"
+        path: "projects"
     },
     {
         name: "Contact",
-        path: "/contact"
-    }
+        path: "contact"
+    }   
 ]
 
 export const fira = Fira_Sans({ weight: "800", subsets: ['latin'] })
@@ -65,9 +66,15 @@ export const Navbar = () => {
                                     key={item.path}
                                     variants={navLink}
                                 >
-                                    <Link href={item.path}>
+                                    <ScrollLink 
+                                        spy={true}
+                                        smooth={true}
+                                        duration={500}
+                                        offset={-100}
+                                        to={item.path}
+                                    >
                                         {item.name}
-                                    </Link>
+                                    </ScrollLink>
                                 </motion.li>
                             ))
                         }

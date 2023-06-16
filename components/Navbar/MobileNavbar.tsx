@@ -9,6 +9,7 @@ import Image from "next/image"
 import blobImage from "@/images/blob-gradient.svg"
 import { useEffect } from "react"
 import { fira, linkItems } from "./Navbar"
+import { Link as ScrollLink } from "react-scroll"
 
 export const listContainer: Variants = {
     hidden: {
@@ -16,7 +17,7 @@ export const listContainer: Variants = {
         transition: {
             delay: 0.5,
             staggerChildren: 0.2,
-            staggerDirection: -1 
+            staggerDirection: -1
         }
     },
     show: {
@@ -31,17 +32,17 @@ export const socialItems = [
     {
         name: "Github",
         Icon: () => <FiGithub />,
-        link: "d"
+        link: "https://github.com/ikecruz"
     },
     {
         name: "Twitter",
         Icon: () => <FiTwitter />,
-        link: "f"
+        link: "https://twitter.com/ikxcrxz"
     },
     {
         name: "Linkedin",
         Icon: () => <FiLinkedin />,
-        link: "r"
+        link: "https://www.linkedin.com/in/onyeka-ikedinobi-98538b204/"
     }
 ]
 
@@ -119,9 +120,16 @@ export const MobileNavbar = ({
                                 key={item.path}
                                 variants={navLink}
                             >
-                                <Link href={item.path} onClick={onClose}>
+                                <ScrollLink
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-100}
+                                    to={item.path}
+                                    onClick={onClose}
+                                >
                                     {item.name}
-                                </Link>
+                                </ScrollLink>
                             </motion.li>
                         ))
                     }

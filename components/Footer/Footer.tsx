@@ -3,23 +3,10 @@ import Image from "next/image"
 import { socialItems } from "../Navbar/MobileNavbar"
 import { AnimatedText } from "../AnitmatedText"
 import blobImage from "@/../images/footer-blob.svg"
+import { Link as ScrollLink } from "react-scroll"
+import { linkItems } from "../Navbar/Navbar"
 
 export const Footer = () => {
-
-    const linkItems = [
-        {
-            name: "About",
-            link: "#hello"
-        },
-        {
-            name: "My Services",
-            link: ""
-        },
-        {
-            name: "My Projects",
-            link: ""
-        }
-    ]
 
     return <>
     
@@ -46,14 +33,18 @@ export const Footer = () => {
                     <div>
                         <ul className="my-10 flex flex-col gap-5 font-[600] text-xl">
                             {
-                                linkItems.map(({ name, link }, index) => (
+                                linkItems.map(({ name, path }, index) => (
                                     <li key={index}>
-                                        <a 
-                                            className="hover:underline portrait:underline underline-offset-[6px]" 
-                                            href={link}
+                                        <ScrollLink
+                                            className="hover:underline portrait:underline underline-offset-[6px]"  
+                                            spy={true}
+                                            smooth={true}
+                                            duration={500}
+                                            offset={-100}
+                                            to={path}
                                         >
                                             {name}
-                                        </a>
+                                        </ScrollLink>
                                     </li>
                                 ))
                             }
