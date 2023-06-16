@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 const marcellus = Marcellus({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://animated-malabi-ec2aaa.netlify.app/"),
+  metadataBase: new URL("https://ikecruz.dev/"),
   title: 'Onyeka Ikedinobi - Software Engineer',
   description: 'Explore the portfolio of Onyeka Ikedinobi, a skilled full-stack software engineer. Witness impressive projects and skills. Connect for collaborations and exciting software opportunities.',
   openGraph: {
