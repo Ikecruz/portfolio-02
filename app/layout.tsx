@@ -2,18 +2,18 @@
 import { MyCursor } from '@/components/AnimatedCursor/AnimatedCursor'
 import './globals.css'
 import { Marcellus } from 'next/font/google'
-import Head from 'next/head'
+import { Metadata } from 'next'
 
 const marcellus = Marcellus({ weight: "400", subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://animated-malabi-ec2aaa.netlify.app/"),
   title: 'Onyeka Ikedinobi - Software Engineer',
   description: 'Explore the portfolio of Onyeka Ikedinobi, a skilled full-stack software engineer. Witness impressive projects and skills. Connect for collaborations and exciting software opportunities.',
   openGraph: {
     title: "Onyeka Ikedinobi - Software Engineer",
     description: 'Explore the portfolio of Onyeka Ikedinobi, a skilled full-stack software engineer. Witness impressive projects and skills. Connect for collaborations and exciting software opportunities.',
-    site_name: "Onyeka Ikedinobi",
-    type: "website",
+    siteName: "Onyeka Ikedinobi",
     url: "https://ikecruz.dev",
     locale: "en_US",
   },
@@ -21,9 +21,8 @@ export const metadata = {
     title: "Onyeka Ikedinobi - Software Engineer",
     description: 'Explore the portfolio of Onyeka Ikedinobi, a skilled full-stack software engineer. Witness impressive projects and skills. Connect for collaborations and exciting software opportunities.',
     site: "Onyeka Ikedinobi",
-    card: "summary_large_image",
+    card: "summary_large_image" as "app",
     creator: "@ikxcrxz",
-    url: "https://ikecruz.dev",
   }
 }
 
