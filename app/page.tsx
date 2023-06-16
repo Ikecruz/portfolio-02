@@ -171,10 +171,13 @@ export default function Home() {
                             variants={comeFromUnderChildren}
                         >
                             <p>
-                                Hey, my name is  and I am across social medias. I’m a graphic designer,
-                                UX/UI designer & front-end web developer from France.
-                                I’m also passionate about pop music and make portraits and universes around what I listen to and
-                                I’m always curious to learn more when it comes to new technologies and creative coding.
+                                Hey there! I&apos;m Onyeka, aka Cruz, a Fullstack Developer based in Nigeria. I excel in creating sleek UIs and developing responsive, dynamic user interfaces. With a creative mind and logical approach, I merge design and code seamlessly.
+                            </p>
+                            <p>
+                                I&apos;m deeply passionate about TypeScript, creating exceptional UIs, and working in the backend domain. I possess practical expertise in backend technologies like Node.js, Express.js, and databases like MongoDB and Postgres. Additionally, I&apos;m actively exploring React Native for mobile app development to enhance my skill set.
+                            </p>
+                            <p>
+                                As a team player and adaptable problem solver, I thrive in collaborative environments. If you&apos;re looking for a skilled Fullstack (Frontend / Backend) Developer to bolster your team, I&apos;d be delighted to connect with you. Lets bring your ideas to life and create exceptional solutions together! 😊
                             </p>
                             <motion.a
                                 className="my-button"
