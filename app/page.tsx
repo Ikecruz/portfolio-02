@@ -171,7 +171,7 @@ export default function Home() {
                             variants={comeFromUnderChildren}
                         >
                             <p>
-                                Hey there! I&apos;m Onyeka, aka Cruz, a Fullstack Developer based in Nigeria. I excel in creating sleek UIs and developing responsive, dynamic user interfaces. With a creative mind and logical approach, I merge design and code seamlessly.
+                                Hey there! I&apos;m Onyeka, aka Cruz, a Fullstack Developer currently living in London. I excel in creating sleek UIs and developing responsive, dynamic user interfaces. With a creative mind and logical approach, I merge design and code seamlessly.
                             </p>
                             <p>
                                 I&apos;m deeply passionate about TypeScript, creating exceptional UIs, and working in the backend domain. I possess practical expertise in backend technologies like Node.js, Express.js, and databases like MongoDB and Postgres. Additionally, I&apos;m actively exploring React Native for mobile app development to enhance my skill set.
