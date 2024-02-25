@@ -13,32 +13,11 @@ import { TbBrandMantine } from "react-icons/tb"
 export const mainProjects = [
     {
         name: "Eonace",
-        title: "Web app / Frontend",
-        description: "Crafted the frontend of a cutting-edge fintech web application, delivering a seamless user experience for bill payments, gift card transactions, and more.",
+        title: "Mobile payment solution",
+        description: "Developed a user-friendly platform facilitating the purchase of gift cards, airtime recharge, electricity bill payments, and online service transactions",
         image: eonace,
         link: "https://eonace.co",
-        tools: [
-            {
-                name: "NextJS",
-                Icon: SiNextdotjs
-            },
-            {
-                name: "Mantine",
-                Icon: TbBrandMantine
-            },
-            {
-                name: "Typescript",
-                Icon: SiTypescript
-            },
-            {
-                name: "React",
-                Icon: SiReact
-            },
-            {
-                name: "Axios",
-                Icon: SiAxios
-            }
-        ]
+        tools: []
     },
     {
         name: "Ikecruz V2",
